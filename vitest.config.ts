@@ -1,9 +1,8 @@
-import { defineConfig } from "vitest/config";
-import { resolve } from "path";
+import { defineVitestConfig } from "@nuxt/test-utils/config";
 
-export default defineConfig({
+export default defineVitestConfig({
   test: {
-    environment: "happy-dom",
+    environment: "nuxt",
     globals: true,
     setupFiles: ["./tests/setup.ts"],
     coverage: {
@@ -11,15 +10,6 @@ export default defineConfig({
       reporter: ["text"],
       enabled: true,
       exclude: ["node_modules/**", "tests/**", "**/*.test.ts"],
-    },
-  },
-  define: {
-    "import.meta.server": false,
-  },
-  resolve: {
-    alias: {
-      "~": resolve(__dirname, "."),
-      "#imports": resolve(__dirname, "./tests/mocks/imports.ts"),
     },
   },
 });

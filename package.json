@@ -25,6 +25,7 @@
     "vue-router": "^4.6.4"
   },
   "devDependencies": {
+    "@nuxt/test-utils": "^4.0.0",
     "@vitest/coverage-v8": "^4.0.18",
     "@vue/test-utils": "^2.4.6",
     "happy-dom": "^20.7.0",
