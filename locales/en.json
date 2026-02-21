@@ -1,0 +1,100 @@
+{
+  "app": {
+    "title": "Patient Task Tracker",
+    "subtitle": "Healthcare Portal"
+  },
+  "nav": {
+    "tasks": "Tasks",
+    "dashboard": "Dashboard"
+  },
+  "roles": {
+    "admin": "Admin",
+    "nurse": "Nurse",
+    "switchRole": "Switch Role"
+  },
+  "tasks": {
+    "title": "Patient Tasks",
+    "task": "task",
+    "tasks": "tasks",
+    "addTask": "Add Task",
+    "editTask": "Edit Task",
+    "viewTask": "Task Details",
+    "deleteTask": "Delete Task",
+    "backToList": "Back to Tasks",
+    "noTasks": "No tasks found",
+    "search": "Search by title or patient name...",
+    "filterByStatus": "Filter by status",
+    "allStatuses": "All Statuses",
+    "sortBy": "Sort by",
+    "dueDateRange": "Due date range",
+    "overdue": "Overdue",
+    "columns": {
+      "title": "Task Title",
+      "patient": "Patient Name",
+      "priority": "Priority",
+      "dueDate": "Due Date",
+      "status": "Status",
+      "assignee": "Assignee",
+      "actions": "Actions"
+    },
+    "form": {
+      "title": "Title",
+      "titlePlaceholder": "Enter task title",
+      "patient": "Patient Name",
+      "patientPlaceholder": "Enter patient name",
+      "description": "Description",
+      "descriptionPlaceholder": "Enter task description...",
+      "priority": "Priority",
+      "status": "Status",
+      "dueDate": "Due Date",
+      "assignee": "Assignee",
+      "assigneePlaceholder": "Enter assignee name",
+      "save": "Save Task",
+      "cancel": "Cancel",
+      "create": "Add Task",
+      "update": "Update Task"
+    },
+    "validation": {
+      "titleRequired": "Title is required",
+      "titleMinLength": "Title must be at least 3 characters",
+      "patientRequired": "Patient name is required",
+      "patientMinLength": "Patient name must be at least 3 characters",
+      "dueDateRequired": "Due date is required",
+      "dueDatePast": "Due date cannot be in the past",
+      "priorityRequired": "Priority is required"
+    },
+    "priority": {
+      "High": "High",
+      "Medium": "Medium",
+      "Low": "Low"
+    },
+    "status": {
+      "Pending": "Pending",
+      "In Progress": "In Progress",
+      "Completed": "Completed"
+    },
+    "detail": {
+      "description": "Description",
+      "activityLog": "Activity Log",
+      "noActivity": "No activity recorded yet",
+      "statusUpdated": "Status updated from \"{from}\" to \"{to}\"",
+      "taskCreated": "Task created",
+      "taskEdited": "Task edited"
+    },
+    "confirm": {
+      "deleteTitle": "Delete Task",
+      "deleteMessage": "Are you sure you want to delete this task?"
+    }
+  },
+  "common": {
+    "yes": "Yes",
+    "no": "No",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View",
+    "close": "Close",
+    "loading": "Loading..."
+  }
+}

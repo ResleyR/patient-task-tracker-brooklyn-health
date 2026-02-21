@@ -1,0 +1,100 @@
+{
+  "app": {
+    "title": "रोगी कार्य ट्रैकर",
+    "subtitle": "स्वास्थ्य सेवा पोर्टल"
+  },
+  "nav": {
+    "tasks": "कार्य",
+    "dashboard": "डैशबोर्ड"
+  },
+  "roles": {
+    "admin": "व्यवस्थापक",
+    "nurse": "नर्स",
+    "switchRole": "भूमिका बदलें"
+  },
+  "tasks": {
+    "title": "रोगी कार्य",
+    "task": "कार्य",
+    "tasks": "कार्य",
+    "addTask": "कार्य जोड़ें",
+    "editTask": "कार्य संपादित करें",
+    "viewTask": "कार्य विवरण",
+    "deleteTask": "कार्य हटाएं",
+    "backToList": "कार्यों पर वापस जाएं",
+    "noTasks": "कोई कार्य नहीं मिला",
+    "search": "शीर्षक या रोगी नाम से खोजें...",
+    "filterByStatus": "स्थिति के अनुसार फ़िल्टर करें",
+    "allStatuses": "सभी स्थितियाँ",
+    "sortBy": "इसके अनुसार क्रमबद्ध करें",
+    "dueDateRange": "नियत तिथि सीमा",
+    "overdue": "अतिदेय",
+    "columns": {
+      "title": "कार्य शीर्षक",
+      "patient": "रोगी का नाम",
+      "priority": "प्राथमिकता",
+      "dueDate": "नियत तिथि",
+      "status": "स्थिति",
+      "assignee": "असाइनी",
+      "actions": "क्रियाएं"
+    },
+    "form": {
+      "title": "शीर्षक",
+      "titlePlaceholder": "कार्य शीर्षक दर्ज करें",
+      "patient": "रोगी का नाम",
+      "patientPlaceholder": "रोगी का नाम दर्ज करें",
+      "description": "विवरण",
+      "descriptionPlaceholder": "कार्य विवरण दर्ज करें...",
+      "priority": "प्राथमिकता",
+      "status": "स्थिति",
+      "dueDate": "नियत तिथि",
+      "assignee": "असाइनी",
+      "assigneePlaceholder": "असाइनी का नाम दर्ज करें",
+      "save": "कार्य सहेजें",
+      "cancel": "रद्द करें",
+      "create": "कार्य जोड़ें",
+      "update": "कार्य अपडेट करें"
+    },
+    "validation": {
+      "titleRequired": "शीर्षक आवश्यक है",
+      "titleMinLength": "शीर्षक कम से कम 3 अक्षर का होना चाहिए",
+      "patientRequired": "रोगी का नाम आवश्यक है",
+      "patientMinLength": "रोगी का नाम कम से कम 3 अक्षर का होना चाहिए",
+      "dueDateRequired": "नियत तिथि आवश्यक है",
+      "dueDatePast": "नियत तिथि अतीत में नहीं हो सकती",
+      "priorityRequired": "प्राथमिकता आवश्यक है"
+    },
+    "priority": {
+      "High": "उच्च",
+      "Medium": "मध्यम",
+      "Low": "निम्न"
+    },
+    "status": {
+      "Pending": "लंबित",
+      "In Progress": "प्रगति में",
+      "Completed": "पूर्ण"
+    },
+    "detail": {
+      "description": "विवरण",
+      "activityLog": "गतिविधि लॉग",
+      "noActivity": "अभी तक कोई गतिविधि दर्ज नहीं की गई",
+      "statusUpdated": "स्थिति \"{from}\" से \"{to}\" में बदली गई",
+      "taskCreated": "कार्य बनाया गया",
+      "taskEdited": "कार्य संपादित किया गया"
+    },
+    "confirm": {
+      "deleteTitle": "कार्य हटाएं",
+      "deleteMessage": "क्या आप वाकई इस कार्य को हटाना चाहते हैं?"
+    }
+  },
+  "common": {
+    "yes": "हाँ",
+    "no": "नहीं",
+    "save": "सहेजें",
+    "cancel": "रद्द करें",
+    "delete": "हटाएं",
+    "edit": "संपादित करें",
+    "view": "देखें",
+    "close": "बंद करें",
+    "loading": "लोड हो रहा है..."
+  }
+}
