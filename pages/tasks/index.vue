@@ -5,6 +5,7 @@ import {
   formatShortDate as formatDate,
   isOverdue,
 } from "~/utils/taskFormatters";
+import type { Task } from "~/types";
 
 const { t } = useI18n();
 const taskStore = useTaskStore();
@@ -60,8 +61,33 @@ function deleteTask(taskId: string) {
   }
 }
 
-function onRowReorder(event: any) {
-  taskStore.reorderTasks(event.value);
+function onRowReorder(event: {
+  dragIndex: number;
+  dropIndex: number;
+  value: Task[];
+}) {
+  // event.value is only the filtered subset, so we can't replace the full array
+  // with it. Instead, use dragIndex/dropIndex to find the tasks in the full
+  // array and move accordingly.
+
+  // Since event.value is the filtered but reordered subset, we swap the indices
+  // as that would match the before state.
+  const dragTask = event.value[event.dropIndex];
+
+  const fullTasks = [...taskStore.tasks];
+  const fromIndex = fullTasks.findIndex((t) => t.id === dragTask.id);
+  let toIndex: number;
+  if (event.dropIndex > 0) {
+    // we want to insert it just after the item it is now before in the filtered tasks
+    const dropTask = event.value[event.dropIndex - 1];
+    toIndex = fullTasks.findIndex((t) => t.id === dropTask.id) + 1;
+  } else {
+    toIndex = 0;
+  }
+
+  const [moved] = fullTasks.splice(fromIndex, 1);
+  fullTasks.splice(toIndex, 0, moved);
+  taskStore.reorderTasks(fullTasks);
 }
 </script>
 

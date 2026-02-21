@@ -4,7 +4,6 @@ import type { Task } from "~/types";
 import { mockTasks } from "~/data/mockTasks";
 
 const STORAGE_KEY = "patient-task-tracker:tasks";
-const PRIORITY_WEIGHT: Record<string, number> = { High: 3, Medium: 2, Low: 1 };
 
 function getRandomId() {
   return Math.random().toString(36).substring(2, 9);
@@ -22,8 +21,6 @@ export const useTaskStore = defineStore("tasks", () => {
   const tasks = ref<Task[]>([]);
   const searchQuery = ref("");
   const statusFilter = ref<string | null>(null);
-  const sortField = ref<"dueDate" | "priority">("dueDate");
-  const sortOrder = ref<"asc" | "desc">("asc");
   const dateRangeStart = ref<string | null>(null);
   const dateRangeEnd = ref<string | null>(null);
 
@@ -48,22 +45,8 @@ export const useTaskStore = defineStore("tasks", () => {
       result = result.filter((t) => t.dueDate <= dateRangeEnd.value!);
     }
 
-    const sortByFunc =
-      sortField.value === "priority" ? sortByPriority : sortByDueDate;
-    result.sort(sortByFunc);
-
     return result;
   });
-
-  function sortByDueDate(a: Task, b: Task) {
-    const diff = a.dueDate.localeCompare(b.dueDate);
-    return sortOrder.value === "asc" ? diff : -diff;
-  }
-
-  function sortByPriority(b: Task, a: Task) {
-    const diff = PRIORITY_WEIGHT[b.priority] - PRIORITY_WEIGHT[a.priority];
-    return sortOrder.value === "asc" ? -diff : diff;
-  }
 
   function loadFromStorage() {
     if (import.meta.server) return;
@@ -170,8 +153,6 @@ export const useTaskStore = defineStore("tasks", () => {
     tasks,
     searchQuery,
     statusFilter,
-    sortField,
-    sortOrder,
     dateRangeStart,
     dateRangeEnd,
     filteredTasks,

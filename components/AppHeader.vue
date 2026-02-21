@@ -1,9 +1,9 @@
 <script setup lang="ts">
-const { t, locale } = useI18n();
+const { t, locale, setLocale } = useI18n();
 const authStore = useAuthStore();
 
 function toggleLocale() {
-  locale.value = locale.value === "en" ? "hi" : "en";
+  setLocale(locale.value === "en" ? "hi" : "en");
 }
 </script>
 

@@ -47,12 +47,10 @@ describe("Task Store", () => {
       expect(store.tasks).toEqual([]);
     });
 
-    it("has default filter/sort values", () => {
+    it("has default filter values", () => {
       const store = useTaskStore();
       expect(store.searchQuery).toBe("");
       expect(store.statusFilter).toBeNull();
-      expect(store.sortField).toBe("dueDate");
-      expect(store.sortOrder).toBe("asc");
       expect(store.dateRangeStart).toBeNull();
       expect(store.dateRangeEnd).toBeNull();
     });
@@ -360,41 +358,13 @@ describe("Task Store", () => {
       });
     });
 
-    describe("sorting", () => {
-      it("sorts by due date ascending (default)", () => {
+    describe("ordering", () => {
+      it("preserves insertion order", () => {
+        // Actual sorting will be handled by the DataTable
         const store = seedStore();
-        store.sortField = "dueDate";
-        store.sortOrder = "asc";
 
-        const dates = store.filteredTasks.map((t) => t.dueDate);
-        expect(dates).toEqual([...dates].sort());
-      });
-
-      it("sorts by due date descending", () => {
-        const store = seedStore();
-        store.sortField = "dueDate";
-        store.sortOrder = "desc";
-
-        const dates = store.filteredTasks.map((t) => t.dueDate);
-        expect(dates).toEqual([...dates].sort().reverse());
-      });
-
-      it("sorts by priority ascending (High first)", () => {
-        const store = seedStore();
-        store.sortField = "priority";
-        store.sortOrder = "asc";
-
-        const priorities = store.filteredTasks.map((t) => t.priority);
-        expect(priorities).toEqual(["High", "Medium", "Low"]);
-      });
-
-      it("sorts by priority descending (Low first)", () => {
-        const store = seedStore();
-        store.sortField = "priority";
-        store.sortOrder = "desc";
-
-        const priorities = store.filteredTasks.map((t) => t.priority);
-        expect(priorities).toEqual(["Low", "Medium", "High"]);
+        const titles = store.filteredTasks.map((t) => t.title);
+        expect(titles).toEqual(["Blood test", "X-ray review", "Discharge"]);
       });
     });
 
